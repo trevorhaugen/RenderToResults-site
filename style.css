@@ -11,3 +11,13 @@ footer{flex-wrap:wrap}.social-links{display:flex;flex-wrap:wrap;gap:8px 18px}.so
 .art-top{gap:14px}.hero-motif{width:62px;height:62px;flex:none}.process-strip b{display:flex;align-items:center;flex:none}.process-strip b img{display:block;width:36px;height:18px}.closing-motif{width:240px;height:240px;flex:none;transform:rotate(8deg)}@media(max-width:800px){.hero-motif{width:48px;height:48px}.process-strip b,.closing-motif{display:none}}
 
 .signup-trap{position:absolute;left:-5000px}.signup-note{font-size:.8rem;color:#555;line-height:1.5;margin:4px 0}#signup-form input:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+
+/* Audience problem-led layout */
+.audience-grid{align-items:start}
+.audience-heading h2{max-width:520px}
+.audience-problems .problem-heading{font-size:clamp(1.9rem,2.8vw,2.7rem);margin-bottom:24px}
+.audience-problems .audience-item{padding:19px 0}
+.audience-problems .audience-item h3{text-transform:uppercase;letter-spacing:.01em}
+.direction-intro{text-align:center;padding-top:38px;margin-top:58px}
+.direction-intro h3{font-family:Arial Black,Arial,sans-serif;font-size:clamp(2rem,3vw,3rem);line-height:1.08;letter-spacing:-.045em}
+@media(max-width:800px){.audience-problems .problem-heading{font-size:2rem}.direction-intro{margin-top:42px;padding-top:30px}.direction-intro h3{font-size:2rem}}
