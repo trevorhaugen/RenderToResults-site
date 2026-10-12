@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 import urllib.parse
 import urllib.request
-
+import urllib.error
 API = 'https://www.googleapis.com/youtube/v3/'
 HANDLE = '@RendertoResults'
 HTML_FILE = Path('index.html')
@@ -19,9 +19,12 @@ HTML_FILE = Path('index.html')
 def youtube(endpoint, **params):
     params['key'] = os.environ['YOUTUBE_API_KEY']
     url = API + endpoint + '?' + urllib.parse.urlencode(params)
-    with urllib.request.urlopen(url, timeout=30) as response:
-        return json.load(response)
-
+    try:
+        with urllib.request.urlopen(url, timeout=30) as response:
+            return json.load(response)
+    except urllib.error.HTTPError as e:
+        print("YouTube API error:", e.read().decode("utf-8"))
+        raise
 
 def seconds(iso):
     # Standard YouTube durations such as PT1M5S, PT59S, PT2M.
