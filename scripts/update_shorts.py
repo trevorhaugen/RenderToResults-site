@@ -36,7 +36,7 @@ def seconds(iso):
 
 
 def latest_shorts():
-    """Use the curated public Shorts playlist, newest playlist additions first."""
+    """Use the curated public Shorts playlist, newest video publication first."""
     ids = []
     token = None
     for _ in range(2):
@@ -44,7 +44,7 @@ def latest_shorts():
         if token:
             options['pageToken'] = token
         batch = youtube('playlistItems', **options)
-        # Playlist ordering can be changed manually; use each item's added date.
+        # Collect IDs; playlist addition dates are not video publication dates.
         for item in batch.get('items', []):
             vid = item.get('contentDetails', {}).get('videoId')
             if vid:
@@ -53,13 +53,13 @@ def latest_shorts():
         if not token:
             break
 
-    ids.sort(reverse=True)
     ordered_ids = list(dict.fromkeys(vid for _, vid in ids))
     details = {}
     for start in range(0, len(ordered_ids), 50):
         batch = youtube('videos', part='snippet,status', id=','.join(ordered_ids[start:start + 50]))
         details.update((v['id'], v) for v in batch.get('items', []))
 
+    ordered_ids.sort(key=lambda vid: (details.get(vid, {}).get('snippet', {}).get('publishedAt', ''), vid), reverse=True)
     shorts = []
     for vid in ordered_ids:
         video = details.get(vid)
