@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+      - name: Install video metadata inspector
+        run: python3 -m pip install --user yt-dlp
       - name: Fetch Shorts and update homepage
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}

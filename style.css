@@ -75,3 +75,10 @@ footer{flex-wrap:wrap}.social-links{display:flex;flex-wrap:wrap;gap:8px 18px}.so
 @keyframes r2r-shift-right{from{left:-85px}to{left:110%}}
 @media(max-width:600px){.shift-band{gap:7px;padding:16px 9px}.shift-center{max-width:72%}.shift-center strong{padding:10px 8px;font-size:.68rem}.shift-center small{font-size:.69rem}.shift-flow span{font-size:19px}.direction-card .balance{min-height:0;padding-top:16px;margin-top:22px}}
 @media(prefers-reduced-motion:reduce){.shift-flow span{animation:none;left:15%}.shift-flow span+span{display:none}}
+
+/* Branded Shorts thumbnail / click-to-play experience */
+.short-launch{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:#000;cursor:pointer;overflow:hidden;display:block}
+.short-launch img{display:block;width:100%;height:100%;object-fit:cover}
+.short-launch::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 70%,rgba(0,0,0,.3));pointer-events:none}
+.short-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;background:#ff0033;color:white;font-size:25px;line-height:1;padding:15px 22px;border-radius:15px}
+.short-launch:hover .short-play,.short-launch:focus-visible .short-play{background:#d9002d;transform:translate(-50%,-50%) scale(1.06)}
