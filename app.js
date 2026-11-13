@@ -3,6 +3,17 @@ document.querySelectorAll('[data-open]').forEach(button => button.addEventListen
 dialogs.forEach(dialog => { dialog.querySelector('.close').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } }); });
 // Signup posts directly to Mailchimp; its confirmation flow handles errors and double opt-in.
 
+// Track a qualified email-signup submission as a Meta Lead event.
+const signupForm = document.getElementById('signup-form');
+if (signupForm) {
+  signupForm.addEventListener('submit', () => {
+    if (!signupForm.checkValidity()) return;
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', { content_name: '100-Day Roadmap Signup' });
+    }
+  });
+}
+
 // Load the YouTube player only after a visitor clicks the custom thumbnail.
 document.addEventListener('click', event => {
   const button = event.target.closest('.short-launch');
