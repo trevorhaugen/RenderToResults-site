@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Download the Render to Results Roadmap</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f6f1e7;color:#111;margin:0;display:grid;place-items:center;min-height:100vh;padding:24px}
+    main{max-width:720px;text-align:center}
+    h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 20px}
+    p{font-size:1.15rem;line-height:1.5;color:#555}
+    a{display:inline-block;margin-top:22px;background:#08c6db;color:#111;text-decoration:none;font-weight:800;padding:18px 28px;border:2px solid #111}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Your roadmap is ready.</h1>
+    <p>If the download does not begin automatically, use the button below.</p>
+    <a id="download" href="/downloads/Render-to-Results-100-Day-Roadmap-Beta.pdf" download>Download the roadmap — Beta Version</a>
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      const link = document.getElementById('download');
+      setTimeout(() => link.click(), 200);
+    });
+  </script>
+</body>
+</html>
