@@ -106,3 +106,28 @@ footer{flex-wrap:wrap}.social-links{display:flex;flex-wrap:wrap;gap:8px 18px}.so
 .closing-art-right .closing-accent{left:0;top:4px;transform:rotate(18deg)}
 @media(max-width:1000px){.closing{grid-template-columns:150px minmax(0,1fr) 150px;gap:12px}.closing-content h2{font-size:clamp(2.5rem,5.3vw,4rem)}.closing-retro{width:210px}.closing-accent{width:64px;height:64px}}
 @media(max-width:800px){.hero-journey{font-size:.78rem}.roadmap-subhead{font-size:.62em}.story-badge b{font-size:.84rem;max-width:210px}.closing{display:block;text-align:center;padding-top:58px;padding-bottom:58px}.closing-art{display:none}.closing-content h2{white-space:normal;font-size:2.65rem}.closing-content p{max-width:330px;margin:16px auto 25px}.closing-actions{width:100%;flex-direction:column;align-items:stretch}.closing-actions .button{width:100%;min-width:0}}
+
+
+/* Final Day 22 polish */
+@media(min-width:801px){
+  .audience-heading .computer-art{max-width:540px;max-height:355px;margin-top:54px;transform:translateY(14px)}
+  .audience-heading h2{max-width:660px}
+  .audience-problems .problem-heading{max-width:620px}
+  .roadmap .section-heading{display:block}
+  .roadmap .section-heading h2{max-width:980px}
+  .story-badge{gap:28px}
+  .story-badge>strong{display:flex;align-items:baseline;gap:12px;white-space:nowrap}
+  .story-badge>strong span{display:inline;font:inherit;background:none;padding:0;margin:0;letter-spacing:-.055em;color:inherit}
+  .story-badge b{max-width:320px}
+}
+@media(min-width:1001px){
+  .closing{grid-template-columns:minmax(140px,.8fr) minmax(430px,1.6fr) minmax(140px,.8fr)}
+  .closing-art-left{transform:rotate(-5deg) translateX(-24%)}
+  .closing-art-right{transform:rotate(5deg) translateX(24%)}
+  .closing-retro{width:min(100%,300px)}
+}
+@media(min-width:1200px){
+  .closing-art-left{transform:rotate(-5deg) translateX(-38%)}
+  .closing-art-right{transform:rotate(5deg) translateX(38%)}
+  .closing-retro{width:min(100%,320px)}
+}
