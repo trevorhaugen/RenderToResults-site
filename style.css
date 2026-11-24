@@ -131,3 +131,16 @@ footer{flex-wrap:wrap}.social-links{display:flex;flex-wrap:wrap;gap:8px 18px}.so
   .closing-art-right{transform:rotate(5deg) translateX(38%)}
   .closing-retro{width:min(100%,320px)}
 }
+
+
+/* Simplified 100-day experiment badge */
+.story-badge{display:grid;grid-template-columns:1fr;gap:4px;align-items:start}
+.story-badge>strong{display:block!important;font-family:Arial Black,Arial,sans-serif;font-size:clamp(3.8rem,7vw,6.4rem)!important;line-height:.92;letter-spacing:-.07em;white-space:nowrap}
+.story-badge>div{min-width:0}
+.story-badge b{display:block;max-width:none!important;font-size:clamp(.9rem,1.5vw,1.2rem)!important;line-height:1.15;font-weight:900;text-transform:none}
+.story-badge span{display:none!important}
+@media(max-width:800px){
+  .story-badge{gap:2px;padding:18px 20px 20px}
+  .story-badge>strong{font-size:clamp(3.2rem,13vw,5rem)!important;white-space:nowrap}
+  .story-badge b{font-size:clamp(.82rem,3.8vw,1.05rem)!important;line-height:1.12}
+}
