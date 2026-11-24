@@ -12,7 +12,8 @@ import urllib.parse
 import urllib.request
 import urllib.error
 API = 'https://www.googleapis.com/youtube/v3/'
-PLAYLIST_ID = 'PLEwKIxLkJ-tw'
+# Uploads playlist for @RendertoResults (all channel uploads, including Shorts).
+PLAYLIST_ID = 'UUsqzWR8oZZGWMP4YZ3LMQpw'
 HTML_FILE = Path('index.html')
 
 
@@ -36,7 +37,7 @@ def seconds(iso):
 
 
 def latest_shorts():
-    """Use the curated public Shorts playlist, newest video publication first."""
+    """Use the channel uploads playlist, newest public upload first."""
     ids = []
     token = None
     for _ in range(2):
