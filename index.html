@@ -23,6 +23,31 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2213973942858766&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCCWLLB5B8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FCCWLLB5B8');
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('signup-form');
+    if (form) form.addEventListener('submit', function () {
+      if (form.checkValidity()) gtag('event', 'roadmap_signup_submit');
+    });
+    document.querySelectorAll('#booking .booking-option').forEach(function (link, index) {
+      link.addEventListener('click', function () {
+        gtag('event', 'book_call_click', { booking_type: index === 0 ? 'project_conversation' : 'paid_consultation' });
+      });
+    });
+    document.querySelectorAll('[data-open="signup"]').forEach(function (button) {
+      button.addEventListener('click', function () { gtag('event', 'roadmap_cta_click'); });
+    });
+  });
+</script>
 </head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header><a href="#" aria-label="Render to Results home"><img class="nav-logo" src="assets/logo.png" alt="Render to Results"></a><nav aria-label="Main navigation"><a href="#roadmap">The roadmap</a><a href="#story">The experiment</a><button class="nav-call nav-roadmap" data-open="signup">Get the free roadmap</button></nav></header>
