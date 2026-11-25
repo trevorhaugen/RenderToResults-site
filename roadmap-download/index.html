@@ -12,6 +12,15 @@
     p{font-size:1.15rem;line-height:1.5;color:#555}
     a{display:inline-block;margin-top:22px;background:#08c6db;color:#111;text-decoration:none;font-weight:800;padding:18px 28px;border:2px solid #111}
   </style>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCCWLLB5B8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FCCWLLB5B8');
+</script>
 </head>
 <body>
   <main>
@@ -22,6 +31,7 @@
   <script>
     window.addEventListener('load', () => {
       const link = document.getElementById('download');
+      link.addEventListener('click', () => { gtag('event', 'roadmap_download_request'); });
       setTimeout(() => link.click(), 200);
     });
   </script>
